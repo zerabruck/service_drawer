@@ -12,7 +12,6 @@ body{
   
 .org-chart ul {
     padding-top: 20px; 
-    
     position: relative;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
@@ -40,8 +39,6 @@ body{
     border-top:  2px solid #d7d4d4;
     width: 50%; 
     height: 20px;
-    
-    
     }
     .org-chart li::after{
     right: auto; 
@@ -68,13 +65,11 @@ body{
     -webkit-border-radius: 5px 0 0 0;
     -moz-border-radius: 5px 0 0 0;
     }
-    /* here */
     .org-chart ul ul::before{
     content: '';
     position: absolute; 
     top: 0; 
     left: 50%; 
-    /* right: 20px; */
     border-left: 2px solid #d7d4d4;
     width: 0;
     height: 20px;
@@ -140,7 +135,6 @@ body{
         justify-content: center;
         align-items: center;
         position: relative;
-        /* z-index: 5; */
     }
     .submit-icon{
         border: none;
@@ -183,7 +177,6 @@ body{
 
         z-index: 999;
         background-color: white;
-        /* background-color: white; */
 
       }
       .pop-up-button{
@@ -271,15 +264,48 @@ body{
     font-weight: 500;
 
 }
-.header-left-side button{
+
+.header-left-side button {
     border: none;
     text-align: center;
-    font-size: .6rem;
+    font-size: 0.6rem;
     border-radius: 7px;
     background-color: orange;
     color: white;
-    padding:  .2rem .4rem;
+    padding: 0.2rem 0.4rem;
+    transform: scale(1); 
+    transition: transform 0.5s ease; 
 }
+
+@keyframes loadAnimation {
+    0% {
+        transform: translateX(0);
+        transform: scale(10); 
+        opacity: 0; 
+    }
+    25% {
+        transform: translateX(100px);
+    }
+    50% {
+        transform: translateX(0);
+        transform: scale(5); 
+        opacity: 1;
+    }
+    75% {
+        transform: translateX(-100px);
+    }
+    100% {
+        transform: translateX(0);
+        transform: scale(1);
+    }
+}
+
+.header-left-side button {
+    animation: loadAnimation 2s ease;
+    animation-fill-mode: forwards;
+}
+
+
 
 .header-right-side{
     display: flex;
@@ -373,12 +399,10 @@ body{
     position: absolute;
     bottom: -5px; 
     left: -2px;
-    /* transform: translateX(-50%); */
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent #cfcece transparent;
     opacity: 0;
-    /* transition: opacity 0.3s; */
     pointer-events: none;
     
   }

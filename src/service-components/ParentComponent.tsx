@@ -17,7 +17,6 @@ const ParentComponent = ({categories, setParent}:{categories:Categories, setPare
 
   const submitHandler = (event: FormEvent<HTMLFormElement>) =>{
     event.preventDefault()
-    console.log(input)
     setCurrentService({...currentService, parent:{...currentService.parent, name:input}} )
     setButtonDisplay(true)
     setInputDisable(true)
